@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<title>Transfer Details</title>
+<br>
+<h1 style="text-align: center;" >Transfer Details</h1>
+<br>
+<br>
+<table>
+<thead> 
+<tr>
+<th>SNo &emsp; </th>
+<th>Sender &emsp;</th>
+<th>Reciever &emsp;</th>
+<th>Transfer Amount &emsp;</th>
+<th>Date &nbsp;</th>
+</tr>
+</thead>
+<tbody>
+{% for t in tr %}
+<tr>
+<td>{{t.id}}</td>
+<td>{{t.sender}}</td>
+<td>{{t.reciever}}</td>
+<td>{{t.amount}}</td>
+<td>{{t.date_tran}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<footer class="sticky-bottom fixed-bottom text-center bg-light" style="padding:10px 10px; display:block; text-align:center;">
+<p>A Project by <b>SHIVAM CHAUDHARY </b>© 2021 all rights reserved</p>
+</footer>
+{% endblock content %}

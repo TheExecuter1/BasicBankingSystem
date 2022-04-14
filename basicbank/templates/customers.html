@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<title>Customer Details</title>
+<br>
+<h1 style="text-align: center;" >Customer Details</h1>
+<br>
+<div class="container-fluid">
+  <div class="col-sm-12 col-md-12 col-lg-12 d-block m-auto"> 
+<br>
+<table>
+<thead> 
+<tr>
+<th>SNo.</th>
+<th>Name</th>
+<th>Email</th>
+<th>Account Balance</th>
+</tr>
+</thead>
+<tbody>
+{% for cust in customer %}
+<tr>
+<td>{{cust.id}}</td>
+<td>{{cust.name}}</td>
+<td>{{cust.email}}</td>
+<td>{{cust.accbal}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+</div>
+</div>
+<footer class="sticky-bottom fixed-bottom text-center bg-light" style="padding:10px 10px; display:block; text-align:center;">
+    <p>A Project by <b>SHIVAM CHAUDHARY </b>© 2021 all rights reserved</p>
+  </footer>
+{% endblock content %}

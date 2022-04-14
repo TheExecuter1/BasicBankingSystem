@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<br>
+{% csrf_token %}
+<title>Tranfer Money</title>
+<div class="container">
+                    <h1>Transfer Money</h1>
+                    <form action="" method="post">
+                    {% csrf_token %}
+                    <label class="blk" for="email">Select Sender Details</label>
+                    <select class="blk" name="email" id="sender" required> <option class="blk" value="select">Select</option>
+        
+                    {% for cust in customer  %}
+                        <option class="blk" value="{{cust.email}}">{{cust.name}}: {{cust.email}} [AccBal: {{cust.accbal}}]</option>
+                    {% endfor %}
+                    </select>
+                    <br>
+                    <label class="blk" for="amount" >Enter Amount</label>
+                    <input class="blk"type="number" name="amount" id="amt" value="null" required>
+                    <br>
+                    <label class="blk" for="rec">Select reciever Details</label>
+                    <select class="blk" name="rec" id="reciever" required>
+                    <option class="blk" value="select">Select</option>
+                    {% for cust in customer  %}
+                        <option class="blk" value="{{cust.email}}">{{cust.name}}: {{cust.email}}</option>
+                    {% endfor %}
+                    </select>
+                    <br>
+                    <button type="submit"id="but" class="btn btn-danger">Transfer</button>
+                    </form>
+        </div>
+    </div>
+</div>
+<footer class="sticky-bottom fixed-bottom text-center bg-light" style="padding:10px 10px; display:block; text-align:center;">
+    <p>A Project by <b>SHIVAM CHAUDHARY </b> © All right Reserved.</p>
+  </footer>
+{% endblock content %}
